@@ -25,7 +25,10 @@ return false if the second object does not have the letter in the target object
 //two arguments
 function canConstructWord(word, letters) {
     //*****what is it asking for empty letter string?!?!?!******
-    if(word === "" || letters === ""){
+    if(word === "" ){
+        return true;
+    }
+    if(letters === ""){
         return false;
     }
     let wordCounter = freqCounter(word);
