@@ -11,13 +11,15 @@ function averagePair(nums, targetAverage) {
   let right = nums.length - 1;
 
   while (left < right) {
-
-    if ((nums[left] + nums[right] / 2) === targetAverage) {
+    let average = (nums[left] + nums[right]) / 2;
+    if (average === targetAverage) {
       return true;
     }
-    else if ((nums[left] + nums[right] / 2) > targetAverage) {
+
+    else if (average > targetAverage) {
       right--;
     }
+
     else left++;
   }
   return false;

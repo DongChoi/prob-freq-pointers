@@ -3,9 +3,10 @@
 
 
 //build frequency counters
-function freqCounter(targetArray){
+/**TODO: what it does, what it accepts, what it returns accepts a word creates an object */ 
+function freqCounter(characters){
     let freq = {};
-    for(let value of targetArray){
+    for(let value of characters){
         let valueCount = freq[value] || 0;
         freq[value] = valueCount + 1;
     }
@@ -25,14 +26,14 @@ return false if the second object does not have the letter in the target object
 //two arguments
 function canConstructWord(word, letters) {
     //*****what is it asking for empty letter string?!?!?!******
-    if(word === "" ){
+    if(word === ""){
         return true;
     }
     if(letters === ""){
         return false;
     }
-    let wordCounter = freqCounter(word);
-    let lettersCounter = freqCounter(letters);
+    const wordCounter = freqCounter(word);
+    const lettersCounter = freqCounter(letters);
     for(let wordLetters in wordCounter){
         if(wordCounter[wordLetters] > lettersCounter[wordLetters]){
             return false;
